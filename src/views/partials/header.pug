@@ -1,0 +1,23 @@
+header.header
+  .header__wrapper
+    .header__column
+      a(href=routes.home)
+        .header__icon
+          span youtube-icon
+    .header__column
+      form(action=routes.search)
+        input(type="text", placeholder="search By term", name="term")
+    .header__column
+      ul
+        if !loggedUser
+          li
+            a(href=routes.join) Join
+          li
+            a(href=routes.login) Login
+        else
+          li
+            a(href=`/videos${routes.upload}`) upload
+          li
+            a(href=routes.me) Profile
+          li
+            a(href=routes.logout) Logout          

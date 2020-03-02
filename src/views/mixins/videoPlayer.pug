@@ -1,0 +1,14 @@
+mixin videoPlayer(video ={})
+  .videoPlayer#jsVideoPlayer
+    video(src=`/${video.src}`)
+    .videoPlayer__controls
+      .videoPlayer__column
+        span#jsVolumeBtn 볼륨
+        span#currentTime 00: 00: 00
+        |/
+        span#totalTime 00:00:00
+        input.videoPlayer__volume#jsVolume(type="range", min=0, max=1, value="0.5" step="0.1")
+      .videoPlayer__column
+        span#jsPlayButton 플레이
+      .videoPlayer__column
+        span#jsFullScreen 전체화면
